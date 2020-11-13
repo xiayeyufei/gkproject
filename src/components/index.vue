@@ -33,10 +33,11 @@
 
                     <v-list>
                         <v-list-item
-                                v-for="(item, index) in items"
-                                :key="index"
+                                v-for="item in items"
+                                :key="item.data"
+                                v-for=""
                         >
-                            <v-list-item-title>{{ item }}</v-list-item-title>
+                            <v-list-item-title>{{ }}</v-list-item-title>
                         </v-list-item>
                     </v-list>
                     <v-spacer></v-spacer>
@@ -68,16 +69,37 @@
                 {title:'查询',url:'/page'},
                 {title:'智能配置',url:'/page'},
             ],
-            items:[ [{ title: 'Click Me' },],
-                [{ title: 'Click Me' },
-                { title: 'Click Me' },
-                { title: 'Click Me 2' }],
-                [{ title: 'Cl Me' },
-                { title: 'Cl Me' },
-                { title: 'Clie 2' }],
-                { title: 'Csdfack Me' },
-                { title: 'Casdf Me' },
-                { title: 'Clidf asdf2' },]
+            items:[
+                {
+                    data:[
+                        { title: 'Csdfack Me' },
+                        { title: 'Casdf Me' },
+                        { title: 'Clidf asdf2' },
+                    ]
+                },
+                {
+                    data:[
+                        { title: 'Csdqw234353Me' },
+                        { title: 'Casd2342134e' },
+                    ]
+                },
+                {
+                    data:[
+                        { title: '上当了发哈沙雕番Me' },
+                        { title: 'C阿瑟地方34e' },
+                    ]
+                },
+                {
+                    data:[
+                        { title: '上当了发哈沙雕番Me' },
+                        { title: 'C阿瑟地方34e' },
+                        { title: 'C阿瑟地方34e' },
+                        { title: 'C阿瑟地方34e' },
+                        { title: 'C阿瑟地方34e' },
+                    ]
+                },
+
+                ]
         }),
     }
 </script>
