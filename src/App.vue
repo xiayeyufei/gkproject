@@ -2,18 +2,18 @@
 
   <v-app>
 
-    <router-view/>
+    <router-view></router-view>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './views/index.vue';
+import xx from './views/index.vue';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    xx,
   },
 
   data: () => ({
