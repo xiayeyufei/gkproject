@@ -1,150 +1,97 @@
 <template>
-  <v-container>
-    <v-row class="text-center">
-      <v-col cols="12">
-        <v-img
-          :src="require('../assets/logo.svg')"
-          class="my-3"
-          contain
-          height="200"
-        />
-      </v-col>
+  <v-app id="inspire">
+    <v-app-bar
+            app
+            color="white"
+            flat
+    >
+      <v-container class="py-0 fill-height">
+        <v-avatar
+                class="mr-10"
+                color="grey darken-1"
+                size="32"
+        ></v-avatar>
 
-      <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify
-        </h1>
+        <v-menu
+                class="d-flex justify-start mb-6 "
+                offset-y
+                open-on-hover
+                v-for="link in links"
+                :key="link"
 
-        <p class="subheading font-weight-regular">
-          For help and collaboration with other Vuetify developers,
-          <br>please join our online
-          <a
-            href="https://community.vuetifyjs.com"
-            target="_blank"
-          >Discord Community</a>
-        </p>
-      </v-col>
 
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-        <h2 class="headline font-weight-bold mb-3">
-          What's next?
-        </h2>
+        >
+          <template v-slot:activator="{ on, attrs }" >
+            <v-btn class="white"
+                   elevation=0
+                   v-bind="attrs"
+                   v-on="on"
+                   @click="$router.push(link.url)"
 
-        <v-row justify="center">
-          <a
-            v-for="(next, i) in whatsNext"
-            :key="i"
-            :href="next.href"
-            class="subheading mx-3"
-            target="_blank"
+            >
+              {{link.title}}
+            </v-btn>
+          </template>
+
+          <v-list
           >
-            {{ next.text }}
-          </a>
-        </v-row>
-      </v-col>
+            <v-list-item
+                    v-for="subitem in link.data"
+                    :key="subitem.title"
+            >
+              <v-list-item-title>{{subitem.title}}</v-list-item-title>
+            </v-list-item>
 
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-        <h2 class="headline font-weight-bold mb-3">
-          Important Links
-        </h2>
+          </v-list>
+          <v-spacer></v-spacer>
+        </v-menu>
 
-        <v-row justify="center">
-          <a
-            v-for="(link, i) in importantLinks"
-            :key="i"
-            :href="link.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ link.text }}
-          </a>
-        </v-row>
-      </v-col>
+        <v-spacer></v-spacer>
 
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-        <h2 class="headline font-weight-bold mb-3">
-          Ecosystem
-        </h2>
+        <v-responsive max-width="260">
+          <v-text-field
+                  dense
+                  flat
+                  hide-details
+                  rounded
+                  solo-inverted
+          ></v-text-field>
+        </v-responsive>
+      </v-container>
+    </v-app-bar>
 
-        <v-row justify="center">
-          <a
-            v-for="(eco, i) in ecosystem"
-            :key="i"
-            :href="eco.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ eco.text }}
-          </a>
-        </v-row>
-      </v-col>
-    </v-row>
-  </v-container>
+    <router-view></router-view>
+  </v-app>
 </template>
 
 <script>
   export default {
-    name: 'HelloWorld',
-
     data: () => ({
-      ecosystem: [
-        {
-          text: 'vuetify-loader',
-          href: 'https://github.com/vuetifyjs/vuetify-loader',
-        },
-        {
-          text: 'github',
-          href: 'https://github.com/vuetifyjs/vuetify',
-        },
-        {
-          text: 'awesome-vuetify',
-          href: 'https://github.com/vuetifyjs/awesome-vuetify',
-        },
-      ],
-      importantLinks: [
-        {
-          text: 'Documentation',
-          href: 'https://vuetifyjs.com',
-        },
-        {
-          text: 'Chat',
-          href: 'https://community.vuetifyjs.com',
-        },
-        {
-          text: 'Made with Vuetify',
-          href: 'https://madewithvuejs.com/vuetify',
-        },
-        {
-          text: 'Twitter',
-          href: 'https://twitter.com/vuetifyjs',
-        },
-        {
-          text: 'Articles',
-          href: 'https://medium.com/vuetify',
-        },
-      ],
-      whatsNext: [
-        {
-          text: 'Explore components',
-          href: 'https://vuetifyjs.com/components/api-explorer',
-        },
-        {
-          text: 'Select a layout',
-          href: 'https://vuetifyjs.com/getting-started/pre-made-layouts',
-        },
-        {
-          text: 'Frequently Asked Questions',
-          href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
-        },
+      links: [{title:'主页',
+        url:'/page',
+        data:[
+          { title: 'Csdfack Me' },
+          { title: 'Casdf Me' },
+          { title: 'Clidf asdf2' },
+        ]},
+        {title:'志愿推荐',url:'/page',
+          data:[
+            { title: 'Csdqw234353Me' },
+            { title: 'Casd2342134e' },
+          ]},
+        {title:'查询',url:'/page',
+          data:[
+            { title: '上当了发哈沙雕番Me' },
+            { title: 'C阿瑟地方34e' },
+          ]},
+        {title:'智能配置',url:'/page',
+          data:[
+            { title: '上当了发哈沙雕番Me' },
+            { title: 'C阿瑟地方34e' },
+            { title: 'C阿瑟地方34e' },
+            { title: 'C阿瑟地方34e' },
+            { title: 'C阿瑟地方34e' },
+          ]},
       ],
     }),
   }

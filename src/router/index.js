@@ -8,7 +8,14 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    children:[{
+      path:'/page',
+      name:'Page',
+      component: ()=> import('../components/page')
+    }
+
+    ]
   },
   {
     path: '/about',
