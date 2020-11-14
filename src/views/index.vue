@@ -19,12 +19,14 @@
                         v-for="link in links"
                         :key="link"
 
+
                 >
                     <template v-slot:activator="{ on, attrs }" >
                         <v-btn class="white"
                                 elevation=0
                                 v-bind="attrs"
                                 v-on="on"
+                               @click="$router.push(link.url)"
 
                         >
                             {{link.title}}
@@ -57,7 +59,9 @@
                 </v-responsive>
             </v-container>
         </v-app-bar>
+        <v-main class="grey lighten-3">
         <router-view></router-view>
+        </v-main>
     </v-app>
 </template>
 
