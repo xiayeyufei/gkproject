@@ -31,14 +31,15 @@
                         </v-btn>
                     </template>
 
-                    <v-list>
+                    <v-list
+                    >
                         <v-list-item
-                                v-for="item in items"
-                                :key="item.data"
-                                v-for=""
+                                v-for="subitem in link.data"
+                                :key="subitem.title"
                         >
-                            <v-list-item-title>{{ }}</v-list-item-title>
+                            <v-list-item-title>{{subitem.title}}</v-list-item-title>
                         </v-list-item>
+
                     </v-list>
                     <v-spacer></v-spacer>
                 </v-menu>
@@ -64,42 +65,33 @@
     export default {
         name: "index",
         data: () => ({
-            links: [{title:'主页',url:'/page'},
-                {title:'志愿推荐',url:'/page'},
-                {title:'查询',url:'/page'},
-                {title:'智能配置',url:'/page'},
-            ],
-            items:[
-                {
-                    data:[
-                        { title: 'Csdfack Me' },
-                        { title: 'Casdf Me' },
-                        { title: 'Clidf asdf2' },
-                    ]
-                },
-                {
+            links: [{title:'主页',
+                url:'/page',
+                data:[
+                    { title: 'Csdfack Me' },
+                    { title: 'Casdf Me' },
+                    { title: 'Clidf asdf2' },
+                ]},
+                {title:'志愿推荐',url:'/page',
                     data:[
                         { title: 'Csdqw234353Me' },
                         { title: 'Casd2342134e' },
-                    ]
-                },
-                {
+                    ]},
+                {title:'查询',url:'/page',
                     data:[
                         { title: '上当了发哈沙雕番Me' },
                         { title: 'C阿瑟地方34e' },
-                    ]
-                },
-                {
+                    ]},
+                {title:'智能配置',url:'/page',
                     data:[
                         { title: '上当了发哈沙雕番Me' },
                         { title: 'C阿瑟地方34e' },
                         { title: 'C阿瑟地方34e' },
                         { title: 'C阿瑟地方34e' },
                         { title: 'C阿瑟地方34e' },
-                    ]
-                },
+                    ]},
+            ],
 
-                ]
         }),
     }
 </script>
