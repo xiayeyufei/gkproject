@@ -9,15 +9,14 @@
                 <v-expansion-panels>
                     <v-expansion-panel>
                         <v-expansion-panel-header >
-                            Item
-                            <template v-slot:actions>
-                                <v-icon color="primary" left>
-
-                                </v-icon>
-                            </template>
+                          筛选
                         </v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                           <v-container>
+                             <el-checkbox-group  v-model="checkedCities">
+                               <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
+                             </el-checkbox-group>
+                           </v-container>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
                 </v-expansion-panels>
@@ -29,10 +28,13 @@
 </template>
 
 <script>
+const cityOptions = ['上海', '北京', '广州', '深圳'];
     export default {
         name: "zhiyuan",
         data () {
             return {
+              checkedCities: [],
+              cities: cityOptions,
                 tabs: null,
                 // text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             }
