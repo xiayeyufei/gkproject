@@ -13,7 +13,12 @@ const routes = [
       path:'/page',
       name:'Page',
       component: ()=> import('../components/page')
-    }
+    },
+      {
+        path: 'zhiyuan',
+        name: 'zhiyuan',
+        component:()=>import('../components/zhiyuan')
+      }
 
     ]
   },

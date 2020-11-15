@@ -1,6 +1,6 @@
 <template>
 
-        <v-container>
+        <v-container class="grey lighten-3">
             <v-row>
 
                 <v-col

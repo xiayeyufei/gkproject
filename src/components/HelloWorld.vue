@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <v-app-bar
             app
-            color="light-blue lighten-2"
+            color="light-blue lighten-3"
             flat
 
     >
@@ -12,11 +12,11 @@
                 color="grey darken-1"
                 size="32"
         ></v-avatar>
-        <v-btn class="light-blue lighten-2" style="color: white"
+        <v-btn class="light-blue lighten-3" style="color: white"
                elevation=0
                v-bind="attrs"
                v-on="on"
-               @click="$router.push(link.url)"
+               @click="$router.push('/page')"
         >
           主页
         </v-btn>
@@ -29,7 +29,7 @@
 
         >
           <template v-slot:activator="{ on, attrs }" >
-            <v-btn class="light-blue lighten-2" style="color: white"
+            <v-btn class="light-blue lighten-3" style="color: white"
                    elevation=0
                    v-bind="attrs"
                    v-on="on"
@@ -67,9 +67,9 @@
         </v-responsive>
       </v-container>
     </v-app-bar>
-    <v-main class="grey lighten-3">
+
     <router-view></router-view>
-      </v-main>
+
   </v-app>
 </template>
 
@@ -77,7 +77,7 @@
   export default {
     data: () => ({
       links: [
-        {title:'志愿推荐',url:'/page',
+        {title:'志愿推荐',url:'/zhiyuan',
           data:[
             { title: '院校优先' },
             { title: '专业优先' },
