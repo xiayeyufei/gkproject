@@ -38,7 +38,7 @@
                             </v-row>
                             <br>
                             <v-row >
-                                <v-btn  class="pa-md-4 mx-lg-auto" color="primary" elevation="4" x-large width="250px" style="font-size: 20px;">
+                                <v-btn  class="pa-md-4 mx-lg-auto" color="light-blue lighten-1" elevation="4" x-large width="250px" style="font-size: 20px;color:white">
                                     一键分析
                                 </v-btn>
                             </v-row>

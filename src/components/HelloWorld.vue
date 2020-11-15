@@ -2,8 +2,9 @@
   <v-app id="inspire">
     <v-app-bar
             app
-            color="white"
+            color="light-blue lighten-2"
             flat
+
     >
       <v-container class="py-0 fill-height">
         <v-avatar
@@ -11,7 +12,14 @@
                 color="grey darken-1"
                 size="32"
         ></v-avatar>
-
+        <v-btn class="light-blue lighten-2" style="color: white"
+               elevation=0
+               v-bind="attrs"
+               v-on="on"
+               @click="$router.push(link.url)"
+        >
+          主页
+        </v-btn>
         <v-menu
                 class="d-flex justify-start mb-6 "
                 offset-y
@@ -19,17 +27,16 @@
                 v-for="link in links"
                 :key="link"
 
-
         >
           <template v-slot:activator="{ on, attrs }" >
-            <v-btn class="white"
+            <v-btn class="light-blue lighten-2" style="color: white"
                    elevation=0
                    v-bind="attrs"
                    v-on="on"
                    @click="$router.push(link.url)"
-
             >
               {{link.title}}
+              <i class="el-icon-caret-bottom"></i>
             </v-btn>
           </template>
 
@@ -38,6 +45,7 @@
             <v-list-item
                     v-for="subitem in link.data"
                     :key="subitem.title"
+
             >
               <v-list-item-title>{{subitem.title}}</v-list-item-title>
             </v-list-item>
@@ -68,30 +76,22 @@
 <script>
   export default {
     data: () => ({
-      links: [{title:'主页',
-        url:'/page',
-        data:[
-          { title: 'Csdfack Me' },
-          { title: 'Casdf Me' },
-          { title: 'Clidf asdf2' },
-        ]},
+      links: [
         {title:'志愿推荐',url:'/page',
           data:[
-            { title: 'Csdqw234353Me' },
-            { title: 'Casd2342134e' },
+            { title: '院校优先' },
+            { title: '专业优先' },
           ]},
         {title:'查询',url:'/page',
           data:[
-            { title: '上当了发哈沙雕番Me' },
-            { title: 'C阿瑟地方34e' },
+            { title: '查学校' },
+            { title: '查专业' },
           ]},
         {title:'智能配置',url:'/page',
           data:[
-            { title: '上当了发哈沙雕番Me' },
-            { title: 'C阿瑟地方34e' },
-            { title: 'C阿瑟地方34e' },
-            { title: 'C阿瑟地方34e' },
-            { title: 'C阿瑟地方34e' },
+            { title: '个性化筛选' },
+            { title: '智能查询' },
+
           ]},
       ],
     }),
