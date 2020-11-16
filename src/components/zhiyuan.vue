@@ -12,9 +12,12 @@
             <div class="demo-input-suffix">
               <el-input v-model="input" placeholder="意向院校" label="属性方式："><i slot="prefix" class="el-input__icon el-icon-search"></i></el-input>
             </div>
-            <v-btn  class="mb-6" color="light-blue lighten-1" elevation="3"  width="50px" style="font-size: 15px;color:white">
-              搜索
-            </v-btn>
+            <div>
+              <v-btn  class="mb-6" color="light-blue lighten-1" elevation="3"  width="50px" style="font-size: 15px;color:white">
+                搜索
+              </v-btn>
+            </div>
+
           </v-row>
         </v-col>
 
@@ -75,6 +78,71 @@
                         </v-expansion-panel-content>
                     </v-expansion-panel>
                 </v-expansion-panels>
+              <br>
+
+
+              <v-row>
+                <v-col>
+                  <v-card
+                      elevation="2"
+                      shaped
+                  >
+                    <v-card-text style="text-align: left">
+                        根据有新高考的对应省、对应年度历史数据，计算考生成绩在该省该年度的比对排名情况。从而得出参照某省某年度，考生成绩能够报考的院校风险排序，然后在院校内做专业风险排序。
+                    </v-card-text>
+                  </v-card>
+                </v-col>
+                <v-col>
+
+                </v-col>
+
+              </v-row>
+              <v-card
+                  elevation="0"
+                  color="light-blue lighten-3"
+                  style="color: white ; font-size: small"
+                  tile
+              >
+                  <v-row>
+                    <v-col style="text-align: left ">
+                      概率
+                    </v-col>
+                    <v-col style="text-align: right">
+                      院校名称
+                    </v-col>
+                    <v-divider
+                        vertical
+                        light
+                        style="background: white"
+                    ></v-divider>
+                    <v-col>
+                      地区
+                    </v-col>
+                    <v-divider
+                        vertical
+                        light
+                        style="background: white"
+                    ></v-divider>
+                    <v-col>
+                      专业
+                    </v-col>
+                    <v-divider
+                        vertical
+                        light
+                        style="background: white"
+                    ></v-divider>
+                    <v-col>
+                      <v-row>
+                        <v-col>
+                          计划
+                        </v-col>
+                      </v-row>
+                      <v-row>
+                        2020
+                      </v-row>
+                    </v-col>
+                  </v-row>
+              </v-card>
             </v-tab-item>
         </v-tabs-items>
 
